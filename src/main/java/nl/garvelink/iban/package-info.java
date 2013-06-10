@@ -17,7 +17,7 @@
 /**
  * This package defines utilities for dealing with IBAN numbers. Its main entity is {@link nl.garvelink.iban.IBAN}, an
  * immutable value type representing an IBAN number. The Modulo-97 checksum is implemented in
- * {@link nl.garvelink.iban.Modulo97dulo97}, which can be used directly if needed. The code in this package
+ * {@link nl.garvelink.iban.Modulo97}, which can be used directly if needed. The code in this package
  * throws {@code IllegalArgumentException} on invalid input. Methods don't take {@code null} arguments unless otherwise
  * noted.
  * <p>Usage sample</p>
@@ -26,7 +26,7 @@
  * IBAN iban = IBAN.valueOf( "NL91ABNA0417164300" );
  *
  * // Input may be formatted.
- * iban = IBAN.valueOf( "NL91 ABNA 0417 1643 00" );
+ * iban = IBAN.valueOf( "BE68 5390 0754 7034" );
  *
  * // The valueOf() method returns null if its argument is null.
  * iban.valueOf( null );
@@ -39,11 +39,11 @@
  * Collections.sort( ibans, IBAN.LEXICAL_ORDER );
  *
  * // You can use the Modulo97 class directly to compute or verify the check digits.
- * String candidate = "NL91ABNA0417164300";
+ * String candidate = "GB29 NWBK 6016 1331 9268 19";
  * Modulo97.verifyCheckDigits( candidate );
  *
  * // API methods take CharSequence, not just String.
- * StringBuilder builder = new StringBuilder( "NL00ABNA0417164300" );
+ * StringBuilder builder = new StringBuilder( "LU280019400644750000" );
  * int checkDigits = Modulo97.calculateCheckDigits( builder );
  * </pre>
  *
