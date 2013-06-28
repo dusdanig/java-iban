@@ -30,7 +30,7 @@ public final class IBAN {
      * A comparator that puts IBAN's into lexicographic ordering, per {@link String#compareTo(String)}.
      */
     public static final Comparator<IBAN> LEXICAL_ORDER = new Comparator<IBAN>() {
-        @Override public int compare(IBAN iban, IBAN iban2) {
+        public int compare(IBAN iban, IBAN iban2) {
             return iban.value.compareTo(iban2.value);
         }
     };
